@@ -4,7 +4,6 @@ import './App.css';
 import {Home,About,Contact} from './Routing/route-component';
 import {BrowserRouter,Route} from 'react-router-dom';
 import Navigator from './Routing/navigator';
-import ShowMoreData from './Routing/showmore';
 
 
 
@@ -18,7 +17,6 @@ const App = () =>{
                     <Route path="/" exact component={Home} />
                     <Route path="/aboutus" component={About} />
                     <Route path="/contactus" component={Contact} />
-                    <Route path="/showmore" component={ShowMoreData} />
         </BrowserRouter>
       </header>
       {/* <form onSubmit={this.handleSubmit}>

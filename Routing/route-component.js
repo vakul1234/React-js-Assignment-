@@ -10,7 +10,7 @@ export class Home extends React.Component{
             response:[],
             finalresults:[],
             flag:false,
-            expandall: false
+            expandAll: true
         }
         
     }
@@ -59,21 +59,20 @@ export class Home extends React.Component{
                   });
     }
 
-    showMore() {
-        this.setState({
-            expandall:!this.state.expandall
-        })
+    showMoreMethod = () => {
+        this.setState({ expandAll: !this.state.expandAll });
       }
 
     render(){
     return(
         <div className="jumbotron" style={{background:'darkorange',color:'black'}}>
           <h3>I am Home Component-!!</h3>
-                    <label>User Email ID</label>&nbsp;&nbsp;&nbsp;
+                    <label htmlFor="email">User Email ID</label>&nbsp;&nbsp;&nbsp;
                     <input 
                     type="text" 
                     name="email" 
                     placeholder="email" 
+                    id="email"
                     value={this.state.email} 
                     onChange={this.handleChange}
                     className="form-control" />
@@ -87,8 +86,8 @@ export class Home extends React.Component{
                                                             email = {this.state.email}
                                                             finalresults = {this.state.finalresults}
                                                             flag = {this.state.flag} 
-                                                            expandall = {this.state.expandall}
-                                                            showMore = {this.state.showMore}
+                                                            expandall = {this.state.expandAll}
+                                                            showMoreMethod = {this.showMoreMethod}
                                                             />}
                     <br/>
         </div>
@@ -97,7 +96,7 @@ export class Home extends React.Component{
 }
 export const About = () =>{
     return(
-        <div>
+        <div className="jumbotron" style={{background:'darkviolet',color:'black'}}>
             <h1>I am About Component-!!</h1>
         </div>
     );
@@ -105,7 +104,7 @@ export const About = () =>{
 
 export const Contact = () =>{
     return(
-        <div>
+        <div className="jumbotron" style={{background:'rgb(24, 132, 233)',color:'black'}}>
             <h1>I am Contact Component-!!</h1>
         </div>
     );
