@@ -37,26 +37,19 @@ export class Home extends React.Component{
               entry = this.state.response[i]
                 if(entry.email == this.state.email){
                     results.push(entry);
-                    console.log(" result of search ",results);
-              }
+                    // console.log(" result of search ",results);
+                    this.setState({ flag:false });
+                    this.setState({ finalresults:results });
+                }
           }
-        {
-                    if(this.state.finalresults.length == 0){
-                        this.setState({
-                            flag:true
-                    });
-                    console.log(" in if ",this.state.flag);
-                    }
-                    else{
-                        this.setState({
-                            flag:false
-                        });
-                        console.log(" in else ",this.state.flag);
-                    }
-        }
-          this.setState({
-                      finalresults:results
-                  });
+            if(results.length == 0){
+            this.setState({ flag:true });
+            // console.log(" in if ",this.state.flag);
+            }
+            else{
+                this.setState({ flag:false });
+                // console.log(" in else ",this.state.flag);
+            }
     }
 
     showMoreMethod = () => {
